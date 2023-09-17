@@ -1,0 +1,162 @@
+input {
+    display: none;
+}
+
+.slider-container {
+    background-color: #252525;
+    border-radius: 1em;
+    padding: 2em;
+    border: 0.2em solid black;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+    display: none;
+    margin: 0 auto;
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.title {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.8em;
+    color: antiquewhite;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.slider {
+    border-radius: 1em;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.images {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1em;
+}
+
+.bottom-container {
+    margin: 0 auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    align-items: center;
+    width: 75em;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    width: 1.6em;
+    height: 1.6em;
+    background-color: #252525;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 0.2em;
+    transition: background-color 0.5s ease-in-out;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-inside {
+    display: block;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #44abab;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+label:hover .btn-inside {
+    background-color: #cad3d3;
+}
+
+/* Изменение цвета активной кнопки */
+#slide1:checked~.slider .bottom-container .pagination label[for="slide1"] .btn-inside,
+#slide2:checked~.slider .bottom-container .pagination label[for="slide2"] .btn-inside,
+#slide3:checked~.slider .bottom-container .pagination label[for="slide3"] .btn-inside,
+#slide4:checked~.slider .bottom-container .pagination label[for="slide4"] .btn-inside {
+    background-color: #252525;
+    border: 0.07em solid #44abab;
+    width: 0.6em;
+    height: 0.6em;
+}
+
+/* Измемнение цвета активной кнопки при наведении */
+#slide1:checked~.slider .bottom-container .pagination label[for="slide1"]:hover .btn-inside,
+#slide2:checked~.slider .bottom-container .pagination label[for="slide2"]:hover .btn-inside,
+#slide3:checked~.slider .bottom-container .pagination label[for="slide3"]:hover .btn-inside,
+#slide4:checked~.slider .bottom-container .pagination label[for="slide4"]:hover .btn-inside {
+    background-color: #252525;
+    border: 0.06em solid #cad3d3;
+}
+
+#slide1:active~.slider .bottom-container .pagination label[for="slide1"] .btn-inside,
+#slide2:active~.slider .bottom-container .pagination label[for="slide2"] .btn-inside,
+#slide3:active~.slider .bottom-container .pagination label[for="slide3"] .btn-inside,
+#slide4:active~.slider .bottom-container .pagination label[for="slide4"] .btn-inside {
+    background-color: white;
+}
+
+.slider-container #slide1:checked~.slider .slide1,
+.slider-container #slide2:checked~.slider .slide2,
+.slider-container #slide3:checked~.slider .slide3,
+.slider-container #slide4:checked~.slider .slide4 {
+    display: flex;
+    animation: 0.5s ease-in-out slide-animation;
+}
+
+.text-slide {
+    max-width: 80%;
+    margin: 0;
+}
+
+.text-slide span {
+    text-align: start;
+    color: antiquewhite;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 777px) {
+    .bottom-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-slide {
+        margin-top: 1em;
+        max-width: 100%;
+        align-self: start;
+    }
+}
+
+@keyframes slide-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
