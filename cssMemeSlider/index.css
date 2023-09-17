@@ -5,6 +5,15 @@
     display: none;
 }
 
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.8em;
+    color: antiquewhite;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
 .slider-container {
     background-color: #252525;
     border-radius: 1em;
@@ -108,9 +117,6 @@ label:hover .btn-span {
     color: antiquewhite;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-
-@media screen and (max-width: 1024px) {}
 
 @media screen and (max-width: 660px) {
     .bottom-container {
